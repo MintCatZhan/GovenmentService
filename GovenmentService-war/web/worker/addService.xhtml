@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add Service</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        <ui:composition template="/sharedPage/template.xhtml">
+            <ui:define name="content">
+                <div class="container">
+                    <h2>Add Service</h2>
+                    <h:form enctype="multipart/form-data">
+                        <table class="table table-hover">
+                            <tr>
+                                <td>
+                                    Service Number:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputServiceNumber" label="ServiceNumber" value="${adminManagedBean.service.serviceNumber}" required="true" requiredMessage="Please input no">
+                                        <f:validateLength minimum="1" maximum="6"/>
+                                    </h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputServiceNumber"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Service Name:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputServiceName" label="ServiceName" value="${adminManagedBean.service.serviceName}" required="true" requiredMessage="Please input service name"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputServiceName"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Service Type:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputServiceType" label="ServiceType" value="${adminManagedBean.service.serviceType}" required="true" requiredMessage="Please input type"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputServiceType"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Service Thumbnail:
+                                </td>
+                                <td>
+                                    <!--<h:inputText id="inputServiceThumbnail" label="ServiceThumbnail" value="${adminManagedBean.service.thumbnail}" required="false"></h:inputText>-->
+                                    <h:inputFile required="true" requiredMessage="please upload pix" id="inputThumbnail" value="${adminManagedBean.thumbnail}"></h:inputFile>
+                                </td>
+                                <td>
+                                    <h:message for="inputThumbnail"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Description:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputServiceDescription" label="ServiceDescription" value="${adminManagedBean.service.description}" required="false"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputServiceDescription"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Worker ID:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputServiceWorkerId" label="ServiceWorkerId" value="${adminManagedBean.workerId}" required="true" requiredMessage="Please set linked worker"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputServiceWorkerId"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:commandButton id="addService" value="Add" action="${adminManagedBean.addService(adminManagedBean.service.serviceNumber,
+                                                                                           adminManagedBean.service.serviceName, adminManagedBean.service.serviceType,
+                                                                                           adminManagedBean.service.description,
+                                                                                           adminManagedBean.workerId)}" />
+                                </td>
+                                <td>
+                                    <h:link type="button" class="btn btn-primary" value="Home" outcome="/index" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

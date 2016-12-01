@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Public Page</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        <ui:composition template="/sharedPage/template.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <div class="container">
+                        <table class="table">
+                            <tr class="success">
+                                <td>
+                                    Service Number: 
+                                </td>
+                                <td>
+                                    <h:inputText  id="serviceNumber" label="No" value="${serviceManagedBean.service.serviceNumber}" required="false"></h:inputText>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>
+                                    Service Name:
+                                </td>
+                                <td>
+                                    <h:inputText id="ServiceName" label="Name" value="${serviceManagedBean.service.serviceName}" required="false"></h:inputText>
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>
+                                    Service Type:
+                                </td>
+                                <td>
+                                    <h:inputText id="ServiceType" label="Type" value="${serviceManagedBean.service.serviceType}" required="false"></h:inputText>
+                                </td>
+                            </tr>
+                            <tr class="success">
+                                <td>
+                                    Description:
+                                </td>
+                                <td>
+                                    <h:inputText id="Desc" label="Desc" value="${serviceManagedBean.service.description}" required="false"></h:inputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <h:commandButton id="searchBlurred" value="Search" action="${serviceManagedBean.searchServiceByBlurred()}" />
+                            </tr>
+                            <tr>
+                                <h:link type="button" class="btn btn-primary" value="Personal Details" outcome="/public/personalDetails" />
+                            </tr>
+                        </table>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

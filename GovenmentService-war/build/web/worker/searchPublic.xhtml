@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Search Public User</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        Search: <h:message for="serviceNumber"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User ID: 
+                    </td>
+                    <td>
+                        <h:inputText  id="id" label="No" value="${adminManagedBean.publicUser.userId}" required="false">
+                            <f:validateLength minimum="1" maximum="6"/>
+                        </h:inputText>
+                        <h:message for="id"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User First Name: 
+                    </td>
+                    <td>
+                        <h:inputText  id="fname" label="No" value="${adminManagedBean.publicUser.firstName}" required="false"></h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User Last Name:
+                    </td>
+                    <td>
+                        <h:inputText  id="lname" label="No" value="${adminManagedBean.publicUser.lastName}" required="false"></h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User Email:
+                    </td>
+                    <td>
+                        <h:inputText  id="email" label="No" value="${adminManagedBean.publicUser.email}" required="false"></h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <h:commandButton id="search" value="Search" action="${adminManagedBean.SearchByBlurred()}" />
+                </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+

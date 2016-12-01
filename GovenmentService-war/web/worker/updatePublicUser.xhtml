@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Add Public User</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        <ui:composition template="/sharedPage/template.xhtml">
+            <ui:define name="content">
+                <div class="container">
+                    <h2>Update Public User</h2>
+                    <h:form>
+                        <table class="table table-hover">
+                            <tr>
+                                <td>
+                                    User ID:
+                                </td>
+                                <td>
+                                    <h:outputLabel id="inputServiceNumber" value="${adminManagedBean.publicUser.userId}"/>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Last Name:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputlastName" label="LastName" value="${adminManagedBean.publicUser.lastName}" required="true" requiredMessage="Please input lastname"></h:inputText>
+                                </td>
+                                 <td>
+                                    <h:message for="inputlastName"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    First Name:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputFirstName" label="FisrtName" value="${adminManagedBean.publicUser.firstName}"  required="true" requiredMessage="Please input firstname"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputFirstName"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Email:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputEmail" label="Email" value="${adminManagedBean.publicUser.email}"  required="true" requiredMessage="Please input email"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputEmail"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Password:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputPassword" label="Password" value="${adminManagedBean.publicUser.password}"  required="true" requiredMessage="Please input password"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputPassword"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Address:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputAddress" label="Address" value="${adminManagedBean.publicUser.address}"  required="true" requiredMessage="Please input address"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputAddress"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Phone Number:
+                                </td>
+                                <td>
+                                    <h:inputText id="inputPhoneNumber" label="PhoneNumber" value="${adminManagedBean.publicUser.phoneNumber}"  required="true" requiredMessage="Please input phone Number"></h:inputText>
+                                </td>
+                                <td>
+                                    <h:message for="inputPhoneNumber"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:commandButton id="addUser" value="Update Public User" action="${adminManagedBean.addPublicUser(adminManagedBean.publicUser.userId, 
+                                                                                                    adminManagedBean.publicUser.lastName, 
+                                                                                                    adminManagedBean.publicUser.firstName, 
+                                                                                                    adminManagedBean.publicUser.email, 
+                                                                                                    adminManagedBean.publicUser.password,
+                                                                                                    adminManagedBean.publicUser.address,
+                                                                                                    adminManagedBean.publicUser.phoneNumber)}" />
+                                </td>
+                                <td>
+                                    <h:link type="button" class="btn btn-primary" value="Home" outcome="/index" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

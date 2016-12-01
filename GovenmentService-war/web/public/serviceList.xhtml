@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    <h:head>
+        
+        <title>Service List</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head> 
+    <h:body>
+        <ui:composition template="/sharedPage/template.xhtml">
+            <ui:define name="content">
+                <div class="container">
+                    <article> 
+                        <h2>Service List</h2> 
+                        <hr /> 
+                        <h:form> 
+                            <table id="data" class="table table-hover">
+                                <thead>
+                                    <tr class="">
+                                        <th>No.</th>
+                                        <th>Name</th>
+                                        <th>Thumbnail</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <ul class="list-group">
+                                        <ui:repeat value="#{serviceManagedBean.services}" var="service" varStatus="status" >
+                                            <!--<li class="list-group-item">-->
+                                            <tr>
+                                                <td>
+                                                    <h:outputLabel value="#{service.serviceNumber}" ></h:outputLabel>
+                                                </td>
+                                                <td>
+                                                    <h:outputLabel value="#{service.serviceName}" ></h:outputLabel>
+                                                </td>
+                                                <td>
+                                                    <img src="../resources/img/#{service.thumbnail}" class="img-fluid pull-xs-right" style="height: 200px;width:280px"></img>
+                                                </td>
+                                                <td>
+                                                    <h:commandLink class="btn btn-primary" value="Details" action="${serviceManagedBean.showDetails(service.serviceNumber)}"/>
+                                                    <!--<h:link type="button" class="btn btn-primary" value="Details" outcome="#{serviceManagedBean.showDetails(service.serviceNumber)}" ></h:link>-->
+                                                </td>
+                                            </tr>
+                                                <!--<h:link value="#{service.serviceNumber}.#{service.serviceName}" outcome="#{serviceManagedBean.showDetails(service.serviceNumber)}" ></h:link>-->
+                                            <!--</li>-->
+                                        </ui:repeat>
+                                    </ul>
+                                </tbody>
+                            </table>
+                            <p><h:link type="button" class="btn btn-primary" value="Return" outcome="/index" /> </p>
+                        </h:form>
+                    </article>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body> 
+</html>

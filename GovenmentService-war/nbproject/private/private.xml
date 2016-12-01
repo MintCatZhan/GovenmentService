@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/public/publicPage.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/allPublicUsers.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/addPublicUser.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/src/java/mbeans/AdminManagedBean.java</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/public/serviceDetails.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/searchPublic.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/public/publicLoginPage.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/sharedPage/template.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/sharedPage/header.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/workerPage.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/public/serviceList.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/addWorker.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/sharedPage/footer.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/src/java/mbeans/ServiceManagedBean.java</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/addService.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/sharedPage/contents.xhtml</file>
+            <file>file:/Users/YuanZhan/Desktop/GovenmentService/GovenmentService/GovenmentService-war/web/worker/allServices.xhtml</file>
+        </group>
+    </open-files>
+</project-private>

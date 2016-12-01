@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>All Services</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/sharedPage/template.xhtml">
+            <ui:define name="content">
+                <div class="container">
+                    <h:form> 
+                        <table class="table table-hover">
+                            <tr class="">
+                                <th>No.</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Thumbnail</th>
+                                <th>Description</th>
+                                <th>Availability</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <ui:repeat value="#{adminManagedBean.services}" var="service" varStatus="status" >
+                                <tr>
+                                    <td>
+                                        <h:outputLabel value="#{service.serviceNumber}" />
+                                    </td>
+                                    <td>
+                                        <h:outputLabel value="#{service.serviceName}" ></h:outputLabel>
+                                    </td>
+                                    <td>
+                                        <h:outputLabel value="#{service.serviceType}" ></h:outputLabel>
+                                    </td>
+                                    <td>
+                                        <img src="../resources/img/#{service.thumbnail}" class="img-fluid pull-xs-right" style="height: 200px;width:280px"></img>
+                                    </td>
+                                    <td>
+                                        <h:outputLabel value="#{service.description}" ></h:outputLabel>
+                                    </td>
+                                    <td>
+                                        <h:outputLabel value="#{service.availability}" ></h:outputLabel>
+                                    </td>
+                                    <td>
+                                        <h:commandLink class="btn btn-primary" value="Modify" action="${adminManagedBean.setService(service)}"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton class="btn btn-danger" id="delete" value="Delete" action="${adminManagedBean.removeService(service.serviceNumber)}" />
+                                    </td>
+                                </tr>
+                            </ui:repeat>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h:commandLink type="button" class="btn btn-primary" value="Add Service" action="${adminManagedBean.initial()}" />
+                                </td>
+                                <td></td>
+                                <td>
+                                    <h:link type="button" class="btn btn-primary" value="Home" outcome="/index" />
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
